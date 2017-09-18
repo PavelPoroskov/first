@@ -1,3 +1,8 @@
+
+
+// webpack --config webpack.config.client.js && 
+//   webpack --config webpack.config.server.js
+
 var path = require('path');
 var serverConfig = {
   target: 'node',

@@ -14,8 +14,8 @@ import { renderToString } from 'react-dom/server'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 
-import reducers from './src/reducers'
-import App from './src/App'
+import reducers from './client/reducers'
+import App from './client/App'
 //import { fetchCounter } from './api/counter'
 
 
@@ -78,6 +78,7 @@ function renderFullPage(html, preloadedState) {
     <!doctype html>
     <html>
       <head>
+        <link rel='stylesheet' href='/css/styles.css'>
         <title>Redux Universal Example</title>
       </head>
       <body>

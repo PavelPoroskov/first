@@ -6,4 +6,5 @@
 */.gradle
 */.idea
 cmdK.bat
-
+**/bundle.js
+**/bundle.map
