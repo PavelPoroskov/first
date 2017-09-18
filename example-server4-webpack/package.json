@@ -1,0 +1,28 @@
+{
+  "name": "example-node-server",
+  "version": "1.0.0",
+  "description": "Example Node Server w/ Babel",
+  "main": "lib/index.js",
+  "scripts": {
+    "start": "nodemon lib/index.js --exec babel-node",
+    "build": "babel lib -d dist && webpack",
+    "serve": "node dist/index.js",
+    "test": "mocha --compilers js:babel-register"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "mocha": "^3.0.1",
+    "nodemon": "^1.12.1",
+    "webpack": "^3.6.0"
+  },
+  "dependencies": {
+    "express": "^4.15.4",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2"
+  }
+}
