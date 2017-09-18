@@ -1,7 +1,8 @@
 **/node_modules
 **/*.db
 *.txt
-*/build
+**/build
+**/dist
 */.gradle
 */.idea
 cmdK.bat
