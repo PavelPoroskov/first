@@ -1,2 +1,5 @@
-dist
+public/js/*
+public/css/*
+buildsrv
 node_modules
+**/bundle.js

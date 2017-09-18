@@ -25,9 +25,22 @@ const app = Express()
 //const port = 3000
 const port = 1337
 
+// console.log('__dirname: ', __dirname )
+// console.log('__filename: ', __filename )
+// console.log('process.env.PWD: ', process.env.PWD )
+// console.log('process.cwd(): ', process.cwd() )
+// console.log('process.argv[0]: ', process.argv[0] )
+// console.log('process.argv[1]: ', process.argv[1] )
+let __filename0 = process.argv[1]
+let __dirname0 = path.dirname(__filename0)
+//console.log('__dirname0: ', __dirname0 )
+
+
 //Serve static files
 //app.use('/static', Express.static('static'))
-app.use( Express.static(path.join(__dirname, '../public'), {
+//app.use( Express.static(path.join(__dirname, '../public'), {
+//app.use( Express.static('../public', {
+app.use( Express.static(path.join(__dirname0, '../public'), {
   dotfiles: 'ignore',
   index: false
 }));

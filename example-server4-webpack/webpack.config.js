@@ -6,7 +6,7 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 //loaders
 //rules
 
-var baseConfig = {
+var clientConfig = {
 //    entry: "./app/app.js",
     entry: "./src/client/index.js",
     output: {
@@ -16,28 +16,105 @@ var baseConfig = {
     },
     devtool: '#source-map',
     module: {
-        loaders: [{
+        rules: [{
             test: /\.js$/,
             exclude: /node_modules/,
-            loader: 'babel-loader'
-        }
-        ,{
+    //        loader: 'babel-loader'
+            use: {
+                loader: 'babel-loader',
+                options: {
+                    "presets": [ 
+                        ["env", { "targets": 
+                            { "browsers": "last 2 versions", "uglify": true } }],
+                        "react"
+                    ]
+                }
+            }
+        },
+        {
             test: /\.css$/,
             exclude: /node_modules/,
             use: ExtractTextPlugin.extract({
               fallback: "style-loader",
               use: "css-loader"
             })
-        }
-        ]        
+        }]        
     },
     plugins: [
         new ExtractTextPlugin("css/styles.css"),
     ]
 }
 
+
+
+ 
+
 //if (ENV === 'production') {
-//  baseConfig.plugins.push(new webpack.optimize.UglifyJsPlugin());
+//  clientConfig.plugins.push(new webpack.optimize.UglifyJsPlugin());
 //}
 
-module.exports = baseConfig
+//module.exports = clientConfig
+var fs = require('fs');
+
+
+
+
+var nodeModules = {};
+fs.readdirSync('node_modules')
+    .filter(function(x) {
+        return ['.bin'].indexOf(x) === -1;
+    })
+    .forEach(function(mod) {
+        nodeModules[mod] = 'commonjs ' + mod;
+    });
+
+
+var serverConfig = {
+//    entry: "./app/app.js",
+    entry: "./src/server.js",
+    target: "node",
+    output: {
+        path: path.resolve(__dirname, 'buildsrv'),
+        filename: "server.js",
+        sourceMapFilename: "server.map"
+    },
+    devtool: '#source-map',
+    externals: nodeModules,
+    // node: {
+    //     __dirname: true
+    // },
+    module: {
+        rules: [{
+            test: /\.js$/,
+            exclude: /node_modules/,
+//            loader: 'babel-loader'
+            use: {
+                loader: 'babel-loader',
+                options: {
+                    "presets": [ 
+                        ["env", { "targets": 
+                            { "node": "current", "uglify": true } }],
+                        "react"
+                    ]
+                }
+            }
+        },
+        // { 
+        //     test:  /\.json$/, 
+        //     loader: 'json-loader' 
+        // },
+        {
+            test: /\.css$/,
+            exclude: /node_modules/,
+            use: [ 
+                "style-loader",
+                "css-loader"
+            ]
+        }]        
+    },
+    plugins: [
+    ]
+}
+
+
+module.exports = [ serverConfig, clientConfig ];

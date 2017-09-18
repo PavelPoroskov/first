@@ -5,7 +5,10 @@
   "main": "src/server.js",
   "scripts": {
     "start": "nodemon src/server.js --exec babel-node",
-    "build": "babel src -d buildsrv && webpack --optimize-minimize",
+    "build0": "babel src -d buildsrv && webpack --optimize-minimize",
+    "build1": "webpack --optimize-minimize",
+    "build": "webpack -p",
+    "build3": "babel src -d buildsrv && webpack -p",
     "serve": "node buildsrv/server.js",
     "test": "mocha --compilers js:babel-register"
   },
