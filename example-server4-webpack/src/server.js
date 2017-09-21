@@ -31,6 +31,8 @@ const port = 1337
 // console.log('process.cwd(): ', process.cwd() )
 // console.log('process.argv[0]: ', process.argv[0] )
 // console.log('process.argv[1]: ', process.argv[1] )
+// console.log('path.resolve()', path.resolve() )
+
 let __filename0 = process.argv[1]
 let __dirname0 = path.dirname(__filename0)
 //console.log('__dirname0: ', __dirname0 )
