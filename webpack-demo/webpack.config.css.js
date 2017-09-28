@@ -4,17 +4,25 @@ const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
-  entry: {
-  	app: './src/index.js',
-  	print: './src/print.js',
-  },
+  entry: './src/index.css.js',
   output: {
-    filename: '[name].bundle.js',
+    filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
+  },
+  module: {
+  	rules: [
+  		{
+  			test: /\.css$/,
+  			use: [
+  				'style-loader',
+  				'css-loader'
+  			]
+  		}
+  	]
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),
-//    new webpack.optimize.UglifyJsPlugin(),
+    new webpack.optimize.UglifyJsPlugin(),
     new HtmlWebpackPlugin({template: './src/index.html'})
   ]  
 };
