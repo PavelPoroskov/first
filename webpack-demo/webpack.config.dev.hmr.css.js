@@ -7,11 +7,11 @@ module.exports = {
   entry: {
   	app: './src/index.js'
   },
-  // devtool:'inline-source-map', // no production
-  // devServer:{                  // no production
-  //   contentBase:'./dist',       // no production
-  //   hot:true
-  // },                           // no production
+  devtool:'inline-source-map', // no production
+  devServer:{                  // no production
+    contentBase:'./dist',       // no production
+    hot:true
+  },                           // no production
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
@@ -29,11 +29,9 @@ module.exports = {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin(['dist']),
+//    new CleanWebpackPlugin(['dist']),
+//    new webpack.optimize.UglifyJsPlugin(),
     new HtmlWebpackPlugin({template: './src/index.html'}),
-    new webpack.DefinePlugin({
-      "process.env.NODE_ENV": JSON.stringify("production")
-    }),
-    new webpack.optimize.UglifyJsPlugin(),
+    new webpack.HotModuleReplacementPlugin()
   ]  
 };
