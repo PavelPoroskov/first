@@ -19,14 +19,17 @@ module.exports = {
   // },                           // no production
   output: {
     filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'build')
-//    publicPath: '/'
+    path: path.resolve(__dirname, 'build'),
+    publicPath: '/'
   },
   externals: {
             // Use external version of React
     "react": "React",
     "react-dom": "ReactDOM"
   },  
+  devServer:{                  // no production
+    contentBase:'./build'       // no production
+  },                           // no production
   module: {
     rules: [
       {
@@ -48,7 +51,7 @@ module.exports = {
   plugins: [
 //    new CleanWebpackPlugin(['build']),
     new HtmlWebpackPlugin({
-      template: './src/index.es5plus.html',
+      template: './build/index.es5plus.html',
 //      inject:'head',
       filename: 'index.html'
       }),

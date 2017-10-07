@@ -49,7 +49,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.html',
       inject:'head',
-      filename: './src/index.es5plus.html'
+      filename: 'index.es5plus.html'
     }),
     new ScriptExtHtmlWebpackPlugin({
       custom: {
