@@ -6,23 +6,24 @@ const path = require('path');
 const webpack = require('webpack');
 
 //const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const BabelMinifyPlugin = require("babel-minify-webpack-plugin");
 
-module.exports = {
+//plugin, get vars from file .env and system vars
+const DefinePlugin = new Dotenv({
+  path:'./.env',
+  systemvars: true //load system vars, thay trump vars from .env
+});
+
+const myConfig = {
   entry: {
-//  	env: './src/index-env.js'
     appes5plus: './src/index-react-app.js'
   },
-  // devtool:'inline-source-map', // no production
-  // devServer:{                  // no production
-  //   contentBase:'./build',       // no production
-  // },                           // no production
   output: {
     filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'build')
-//    publicPath: '/'
+    path: path.resolve(__dirname, 'build'),
+    publicPath: '/'
   },
-  externals: {
-            // Use external version of React
+  externals: { // Use external version of React
     "react": "React",
     "react-dom": "ReactDOM"
   },  
@@ -58,15 +59,27 @@ module.exports = {
         value: 'module'
       },      
     }),
-    new Dotenv(),
-    // new webpack.DefinePlugin({
-    //   "process.env.NODE_ENV": JSON.stringify("production")
-    // }),
-//    new webpack.optimize.UglifyJsPlugin()
-      // ({
-      // uglifyOptions: {
-      //   ecma: 6
-      // } })
-//    new UglifyJSPlugin()
+    DefinePlugin
   ]  
 };
+
+
+//console.log(DefinePlugin.definitions['process.env.NODE_ENV']);
+const valueProd = JSON.stringify('production');
+if (DefinePlugin.definitions['process.env.NODE_ENV'] == valueProd) {
+  console.log('NODE_ENV == production');
+  // myConfig['plugins'].push(new webpack.optimize.UglifyJsPlugin({
+  //   uglifyOptions: {
+  //     ecma: 6
+  //   }
+  // }));
+  myConfig['plugins'].push(new BabelMinifyPlugin());
+}else{
+  console.log('NODE_ENV != production');
+  myConfig['devServer'] =  {   // no production
+    contentBase:'./build'      // no production
+  };                           // no production
+  myConfig['devtool'] = 'inline-source-map';  // no production
+};
+
+module.exports = myConfig;
