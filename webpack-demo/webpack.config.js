@@ -13,7 +13,8 @@ module.exports = {
   //   hot:true
   // },                           // no production
   output: {
-    filename: '[name].bundle.js',
+//    filename: '[name].bundle.js',
+    filename: '[name].[chunkhash].js',
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/'
   },

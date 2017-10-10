@@ -38,8 +38,18 @@ const myConfig = {
           options: {
             presets: [
 //              ["env", { "targets": { "browsers": "last 2 versions", "uglify": true } }],
-              ["env", { "targets": { "uglify": true } }],
-              'react'
+              'react',
+              ["env", { 
+                modules: false,
+                useBuiltIns: true,
+                "targets": { 
+                  browsers: [
+                    '> 1%',
+                    'last 2 versions',
+                    'Firefox ESR',
+                  ] 
+                } 
+              }]
               ]
           }
         }
@@ -54,6 +64,7 @@ const myConfig = {
       filename: 'index.html'
       }),
     new ScriptExtHtmlWebpackPlugin({
+//      defaultAttribute: 'defer',
       custom: {
         test: /\.bundle\.js$/,
         attribute: 'nomodule'

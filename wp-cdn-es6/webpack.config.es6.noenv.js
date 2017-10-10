@@ -31,26 +31,14 @@ const myConfig = {
     rules: [
       {
         test: /\.js$/,
-//        exclude: /(node_modules|bower_components)/,
+        exclude: /(node_modules|bower_components)/,
         use: {
           loader: 'babel-loader',
           options: {
             presets: [
-                'react',
-                ['env', {
-                  modules: false,
-                  useBuiltIns: true,
-                  targets: {
-                    browsers: [
-                      'Chrome >= 60',
-//                      'Safari >= 10.1',
-                      'Safari >= 11',
-                      'iOS >= 10.3',
-                      'Firefox >= 54',
-                      'Edge >= 15',
-                    ],
-                  },
-                }]
+//              ["env", { "targets": { "browsers": "last 2 versions", "uglify": true } }],
+//              ["env", { "targets": { "uglify": true } }],
+              'react'
               ]
           }
         }
@@ -86,7 +74,6 @@ if (DefinePlugin.definitions['process.env.NODE_ENV'] == valueProd) {
   //     ecma: 6
   //   }
   // }));
-//  myConfig['plugins'].push(new webpack.optimize.UglifyJsPlugin());
   myConfig['plugins'].push(new BabelMinifyPlugin());
 }else{
   console.log('NODE_ENV != production');
