@@ -8,3 +8,6 @@
 cmdK.bat
 **/bundle.js
 **/bundle.map
+**/*.crt
+**/*.key
+**/*.pem

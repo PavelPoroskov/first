@@ -1,0 +1,14 @@
+{
+  "name": "http2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "client-node.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mime-types": "^2.1.17"
+  }
+}
