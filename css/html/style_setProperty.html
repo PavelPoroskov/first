@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <title>setProperty</title>
+
+    <style>
+    </style>
+
+
+  </head>
+
+  <body>
+  <p>1</p>
+  <p>1</p>
+  <p>1</p>
+  <p>1</p>
+  
+  </body>
+<script language="javascript">
+var paragraphs = document.getElementsByTagName("p");
+for (var i = 0; i < paragraphs.length; i++) {
+  var paragraph = paragraphs.item(i);
+  paragraph.style.setProperty("color", "red", null);
+}
+</script>
+</html>

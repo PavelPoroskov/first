@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Animatiom ProgressBar</title>
+
+<style>
+@keyframes auxiliary-indeterminate-translate {
+    0% {
+//        -webkit-animation-timing-function: cubic-bezier(.15, 0, .515058, .409685);
+        animation-timing-function: cubic-bezier(.15, 0, .515058, .409685);
+//        -webkit-transform: translateX(-54.888891%);
+        transform: translateX(-54.888891%)
+    }
+    25% {
+//        -webkit-animation-timing-function: cubic-bezier(.310330, .284058, .8, .733712);
+        animation-timing-function: cubic-bezier(.310330, .284058, .8, .733712);
+//        -webkit-transform: translateX(-17.236978%);
+        transform: translateX(-17.236978%)
+    }
+    48.35% {
+//        -webkit-animation-timing-function: cubic-bezier(.4, .627035, .6, .902026);
+        animation-timing-function: cubic-bezier(.4, .627035, .6, .902026);
+//        -webkit-transform: translateX(29.497274%);
+        transform: translateX(29.497274%)
+    }
+    to {
+//        -webkit-transform: translateX(105.388891%);
+        transform: translateX(105.388891%)
+    }
+}
+
+@keyframes auxiliary-indeterminate-scale {
+    0% {
+//        -webkit-animation-timing-function: cubic-bezier(.205028, .057051, .576610, .453971);
+        animation-timing-function: cubic-bezier(.205028, .057051, .576610, .453971);
+//        -webkit-transform: scaleX(.08);
+        transform: scaleX(.08)
+    }
+    19.15% {
+//        -webkit-animation-timing-function: cubic-bezier(.152313, .196432, .648374, 1.004315);
+        animation-timing-function: cubic-bezier(.152313, .196432, .648374, 1.004315);
+//        -webkit-transform: scaleX(.457104);
+        transform: scaleX(.457104)
+    }
+    44.15% {
+//        -webkit-animation-timing-function: cubic-bezier(.257759, .003163, .211762, 1.381790);
+        animation-timing-function: cubic-bezier(.257759, .003163, .211762, 1.381790);
+//        -webkit-transform: scaleX(.727960);
+        transform: scaleX(.727960)
+    }
+    to {
+//        -webkit-transform: scaleX(.08);
+        transform: scaleX(.08)
+    }
+}
+
+.LJtPoc .classDiv1_2, .LJtPoc .IdAqtf {
+    position: fixed;
+}
+.classDiv1_1 {
+    height: 4px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.classDiv1_2 {
+//    z-index: 5;
+}
+
+
+.classDiv2_1.classDiv2_3 {
+//    opacity: 0;
+}
+.classDiv2_1 {
+    height: 4px;
+    overflow: hidden;
+    position: relative;
+//    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+//    -webkit-transition: opacity 250ms linear;
+    transition: opacity 250ms linear;
+    width: 100%;
+}
+
+.classDiv2_1.classDiv2_2 .classDiv3_2 {
+//    -webkit-animation: auxiliary-indeterminate-translate 2s infinite linear;
+    animation: auxiliary-indeterminate-translate 2s infinite linear;
+    visibility: visible;
+}
+.classDiv2_1.classDiv2_2 .classDiv3_1 {
+//    -webkit-transition: none;
+//    transition: none;
+}
+.classDiv3_2 {
+//    visibility: hidden;
+}
+.classDiv3_1 {
+//    -webkit-transform-origin: top left;
+    transform-origin: top left;
+//    -webkit-transition: -webkit-transform 250ms ease;
+    transition: transform 250ms ease;
+//    -webkit-animation: none;
+//    animation: none;
+}
+
+.classDiv2_1.classDiv2_4 .classDiv3_2, .classDiv2_1.classDiv2_4 .TKVRUb, .classDiv2_1.classDiv2_4 .classDiv3_2>.classSpan4_1, .classDiv2_1.classDiv2_4 .TKVRUb>.classSpan4_1 {
+//    -webkit-animation-play-state: paused;
+//    animation-play-state: paused;
+}
+.classDiv2_1.classDiv2_2 .classDiv3_2>.classSpan4_1 {
+//    -webkit-animation: auxiliary-indeterminate-scale 2s infinite linear;
+    animation: auxiliary-indeterminate-scale 2s infinite linear;
+}
+.classSpan4_1 {
+    background-color: #ff9800;
+    display: inline-block;
+}
+.classSpan4_1 {
+//    -webkit-animation: none;
+//    animation: none;
+}
+.xcNBHc, .classDiv3_1, .classSpan4_1 {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="classDiv1_1 classDiv1_2" aria-hidden="true">
+
+<div jscontroller="ltDFwf" jsaction="transitionend:Zdx3Re" jsname="Igk6W" role="progressbar" class="classDiv2_1 classDiv2_2 classDiv2_3 classDiv2_4">
+<!--
+	<div class="xcNBHc um3FLe"></div>
+
+	<div jsname="cQwEuf" class="w2zcLc Iq5ZMc"></div>
+	<div class="classDiv3_1 TKVRUb" jsname="P1ekSe">
+		<span class="classSpan4_1 classSpan4_2"></span></div>
+-->
+	<div class="classDiv3_1 classDiv3_2">
+		<span class="classSpan4_1 classSpan4_2"></span>
+	</div>
+</div>
+
+</div>    
+
+</body>
+</html>

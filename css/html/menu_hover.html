@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1">
+
+    <title>Hello World</title>
+
+    <style>
+.j-menu{
+	height:100%;
+	float:right
+}
+
+.j-menu__item{
+	color:#666;
+	font-size:16px;
+//	line-height:74px;
+	line-height:20px;
+	display:inline-block;
+	padding:0 3px;
+	margin:0 14px;
+	text-decoration:none;
+	position:relative
+}
+
+.j-menu__item:link:hover,.j-menu__item:visited:hover{
+	color:#000!important
+}
+
+.j-menu__item_current_yes:after{
+	display:block;
+	content:'';
+	width:100%;
+//	height:5px;
+//	background:#fbc600;
+	height:15px;
+	background:#ff0000;
+	position:absolute;
+	left:0;
+	bottom:0
+}
+
+.j-menu__item:hover,.j-menu__item_current_yes{
+	color:#000!important
+}
+
+.j-menu__item:hover:after{
+	display:block;
+	content:'';
+//	content:'12';
+	width:100%;
+	height:5px;
+//	background:#fedf6d;
+//	height:15px;
+	background:#ff0000;
+	position:absolute;
+	left:0;
+	bottom:0
+//	bottom:20
+}
+    </style>
+
+
+  </head>
+
+  <body>
+<div class="b-top__frame">
+<a class="j-logo" href="/"></a>
+<div class="j-menu j-menu_js_inited">
+<a class="j-menu__item" href="/whatwedo">What We Do</a>
+<a class="j-menu__item" href="/knowledge">Our Knowledge</a>
+<a class="j-menu__item" href="/yac">YDF and CERN</a>
+<a class="j-menu__item" href="/team">Team</a>
+<a class="j-menu__item j-menu__item_feedback_yes" href="#">Feedback</a>
+</div>
+</div>
+  </body>
+
+</html>
