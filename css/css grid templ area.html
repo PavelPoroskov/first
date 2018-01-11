@@ -1,0 +1,61 @@
+<html>
+<head>
+
+<style>
+
+.container {
+    display: grid;
+    grid-gap: 5px;    
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 50px 350px 50px;
+    grid-template-areas:
+        "h h h h h h h h h h h h"
+        "m m c c c c c c c c c c"
+        "f f f f f f f f f f f f";
+}
+
+/* @media screen and (max-width: 640px) { */
+@media (max-width: 640px) {
+    .container {
+        grid-template-areas:
+            "m m m m m m h h h h h h"
+            "c c c c c c c c c c c c"
+            "f f f f f f f f f f f f";
+    }
+}
+
+/* .header { */
+header {
+    grid-area: h;
+    background-color: lightgreen;
+}
+.menu {
+    grid-area: m;
+    background-color: yellow;
+}
+/* .content { */
+main {
+    grid-area: c;
+}
+/* .footer { */
+footer {
+   grid-area: f;
+   background-color: lightblue;
+}
+
+
+
+</style>
+
+</head>
+<body>
+
+<div class="container">
+  <header>HEADER</header>
+  <aside class="menu">MENU</aside>
+  <main>CONTENT</main>
+  <footer>FOOTER</footer>
+</div>
+
+</body>
+</html>
