@@ -9,7 +9,46 @@
         <meta name="description" content="Demonstration of layouts using FlexBox">
         <title>Center Image</title>
         <link rel="stylesheet" href="normalize.css">
-        <link rel="stylesheet" href="style.css">
+<!--        <link rel="stylesheet" href="style.css"> -->
+
+<style>
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.flexContainer {
+    display: flex;
+}
+.flexCenter {
+    justify-content: center;
+}
+.itemCenter {
+    align-items: center;
+}
+
+.fullHeight {
+    height: 100vh;
+}
+
+.homeButton {
+    background: lightskyblue;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #1e1e1e;
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+.centerImage {
+    background: url('images/ocean.jpg') center;
+    background-size: cover;
+}
+
+</style>
+
     </head>
     <body class="whiteBackground">
         <div class="flexContainer flexCenter itemCenter fullHeight centerImage">

@@ -1,0 +1,114 @@
+<html>
+<head>
+
+<style>
+
+.container {
+    display: grid;
+    grid-gap: 5px;    
+    grid-template-columns: repeat(12, 1fr);
+/*    grid-template-rows: 40px 350px 40px; */
+    grid-template-rows: minmax( 40px, auto) 350px 40px; 
+
+/*    grid-template-rows: 40px auto 40px; */
+}
+
+/* .header { */
+header {
+    grid-column: span 12;
+    background-color: lightgreen;
+}
+
+/*
+header {
+    display: flex;
+}
+header > div:nth-child(3) {
+    margin-left: auto;
+}
+*/
+
+.menu {
+  grid-column: span 4;
+  background-color: yellow;
+}
+/* .content { */
+main {
+  grid-column: span 8;
+}
+/* .footer { */
+footer {
+  grid-column: span 12;
+  background-color: lightblue;
+}
+
+
+/* @media screen and (max-width: 640px) { */
+@media (max-width: 680px) {
+  header {
+      grid-column: span 6;
+  }
+  .menu {
+    grid-row: 1;
+    grid-column: span 6;
+  }
+  /* .content { */
+  main {
+    grid-column: span 12;
+  }
+}
+
+.flexContainer {
+    display: flex;
+}
+.flexWrap {
+  flex-flow: row wrap;
+}
+.flexItem {
+    flex: 1;
+}
+.flexStart {
+    justify-content: flex-start;
+}
+.flexEnd {
+    justify-content: flex-end;
+}
+.itemCenter {
+    align-items: center;
+}
+
+header div a {
+    text-decoration: none;
+    display: block;
+    padding: 0 1em;
+}
+
+
+</style>
+
+</head>
+<body>
+
+<div class="container">
+  <header class="flexContainer itemCenter" >
+
+    <div class="flexContainer flexStart flexWrap">
+        <a href="#">Company Name</a>
+        <a href="#">Products</a>
+        <a href="#">About</a>
+        <a href="#">Careers</a>
+        <a href="#">Contact</a>
+    </div>
+    <div class="flexContainer flexEnd flexItem flexWrap">
+        <a href="#">Search</a>
+        <a href="#">Logout</a>
+    </div>
+
+    </header>
+  <aside class="menu">MENU</aside>
+  <main>CONTENT</main>
+  <footer>FOOTER</footer>
+</div>
+
+</body>
+</html>
