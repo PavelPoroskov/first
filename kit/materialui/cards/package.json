@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "react-dom": "latest",
+    "react-autosuggest": "latest",
+    "react": "latest",
+    "material-ui-icons": "latest",
+    "material-ui": "next",
+    "downshift": "latest",
+    "autosuggest-highlight": "latest"
+  }
+}

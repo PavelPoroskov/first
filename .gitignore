@@ -11,3 +11,5 @@ cmdK.bat
 **/*.crt
 **/*.key
 **/*.pem
+**/*.jpeg
+**/*.jpg
