@@ -1,0 +1,18 @@
+{
+  "scripts": {
+    "relay": "relay-compiler --src ./src --schema ./schema.graphql"
+  },
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-relay": "^1.4.1",
+    "relay-runtime": "^1.4.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-relay": "^1.4.1",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "relay-compiler": "^1.4.1"
+  }
+}
