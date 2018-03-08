@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico">
+  <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111">
+  <title>CodePen - Team section - CSS Grid + flexbox</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700">
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  
+      <style>
+      * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background: #fff4f4;
+  font-family: "Lato", serif;
+}
+
+.list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  max-width: 900px;
+  margin: 0 auto 200px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.team {
+  padding: 40px 0px;
+}
+.team > h2 {
+  text-align: center;
+  color: #853962;
+  text-transform: uppercase;
+}
+
+.member {
+  position: relative;
+  background: #ccc;
+  width: 100%;
+}
+.member__img {
+  display: block;
+  width: 100%;
+}
+.member__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  position: absolute;
+  width: calc(100% - 10%);
+  bottom: 5%;
+  left: 5%;
+  padding: 5px 10px;
+  color: #fff;
+  background: rgba(133, 57, 98, 0.8);
+}
+.member__info > * {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 100%;
+          flex: 1 0 100%;
+}
+.member.join {
+  text-align: center;
+  padding: 10px;
+  height: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
+  background: #ffcbcb;
+  color: #853962;
+}
+.member.join p, .member.join small, .member.join strong {
+  margin: 0px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 100%;
+          flex: 0 1 100%;
+}
+.member.join a {
+  position: relative;
+  display: inline-block;
+  padding: 6px 20px;
+  text-decoration: none;
+  background: #f26a8d;
+  color: #fff;
+  border-radius: 30px;
+  -webkit-transition: all .25s ease;
+  transition: all .25s ease;
+}
+.member.join a:hover {
+  -webkit-box-shadow: 0px 0px 15px 1px #f26a8d;
+          box-shadow: 0px 0px 15px 1px #f26a8d;
+}
+@supports (display: grid) {
+  @media (min-width: 800px) {
+    .member.join p, .member.join strong, .member.join a {
+      font-size: 1.5em;
+    }
+  }
+}
+@media (min-width: 400px) {
+  .member {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 50%;
+            flex: 0 1 50%;
+  }
+  .member.join {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 50%;
+            flex: 1 0 50%;
+    padding: 10px 0px;
+    min-height: 200px;
+    height: auto;
+  }
+}
+@media (min-width: 600px) {
+  .member {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 33.33%;
+            flex: 0 1 33.33%;
+  }
+  .member:nth-child(1) {
+    -webkit-box-ordinal-group: -4;
+        -ms-flex-order: -5;
+            order: -5;
+  }
+  .member:nth-child(2) {
+    -webkit-box-ordinal-group: -3;
+        -ms-flex-order: -4;
+            order: -4;
+  }
+  .member:nth-child(3) {
+    -webkit-box-ordinal-group: -2;
+        -ms-flex-order: -3;
+            order: -3;
+  }
+  .member:nth-child(4) {
+    -webkit-box-ordinal-group: -1;
+        -ms-flex-order: -2;
+            order: -2;
+  }
+  .member:nth-child(5) {
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+  }
+  .member.join {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 33.33%;
+            flex: 1 0 33.33%;
+    -webkit-box-ordinal-group: -1;
+        -ms-flex-order: -2;
+            order: -2;
+  }
+}
+@media (min-width: 800px) {
+  .member {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 25%;
+            flex: 0 1 25%;
+  }
+  .member.join {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 50%;
+            flex: 1 0 50%;
+    height: auto;
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+    grid-column: 4 / -4;
+    grid-row: 2 / span 2;
+  }
+}
+
+    </style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script><style></style>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
+</head>
+
+<body translate="no">
+
+  
+<div class="team">
+  <h2>Meet The Team</h2>
+  <div class="list">
+    <div class="member"><img class="member__img" src="https://source.unsplash.com/Pzu9f6Nby5w/400x400" alt="a doggo">
+      <div class="member__info"><strong class="member__name">Doggo</strong><em class="member__desig">Bone getter</em></div>
+    </div>
+    <div class="member"><img class="member__img" src="https://source.unsplash.com/J82KuDlpcPs/400x400" alt="a doggo">
+      <div class="member__info"><strong class="member__name">Doggo</strong><em class="member__desig">Bone getter</em></div>
+    </div>
+    <div class="member"><img class="member__img" src="https://source.unsplash.com/SqhcwFqVlyI/400x400" alt="a doggo">
+      <div class="member__info"><strong class="member__name">Doggo</strong><em class="member__desig">Bone getter</em></div>
+    </div>
+    <div class="member"><img class="member__img" src="https://source.unsplash.com/EScCHx_ZR8Y/400x400" alt="a doggo">
+      <div class="member__info"><strong class="member__name">Doggo</strong><em class="member__desig">Bone getter</em></div>
+    </div>
+    <div class="member"><img class="member__img" src="https://source.unsplash.com/_bN4LHx-ogo/400x400" alt="a doggo">
+      <div class="member__info"><strong class="member__name">Doggo</strong><em class="member__desig">Bone getter</em></div>
+    </div>
+    <div class="member"><img class="member__img" src="https://source.unsplash.com/wzRQfEw9CMc/400x400" alt="a doggo">
+      <div class="member__info"><strong class="member__name">Doggo</strong><em class="member__desig">Bone getter</em></div>
+    </div>
+    <div class="member"><img class="member__img" src="https://source.unsplash.com/2s6ORaJY6gI/400x400" alt="a doggo">
+      <div class="member__info"><strong class="member__name">Doggo</strong><em class="member__desig">Bone getter</em></div>
+    </div>
+    <div class="member"><img class="member__img" src="https://source.unsplash.com/9A64wd1QaAU/400x400" alt="a doggo">
+      <div class="member__info"><strong class="member__name">Doggo</strong><em class="member__desig">Bone getter</em></div>
+    </div>
+    <div class="member"><img class="member__img" src="https://source.unsplash.com/CFvqcuMhW5s/400x400" alt="a doggo">
+      <div class="member__info"><strong class="member__name">Doggo</strong><em class="member__desig">Bone getter</em></div>
+    </div>
+    <div class="member"><img class="member__img" src="https://source.unsplash.com/qKqwRpdGN3k/400x400" alt="a doggo">
+      <div class="member__info"><strong class="member__name">Doggo</strong><em class="member__desig">Bone getter</em></div>
+    </div>
+    <div class="member"><img class="member__img" src="https://source.unsplash.com/KZv7w34tluA/400x400" alt="a doggo">
+      <div class="member__info"><strong class="member__name">Doggo</strong><em class="member__desig">Bone getter</em></div>
+    </div>
+    <div class="member"><img class="member__img" src="https://source.unsplash.com/AbNO2iejoXA/400x400" alt="a doggo">
+      <div class="member__info"><strong class="member__name">Doggo</strong><em class="member__desig">Bone getter</em></div>
+    </div>
+    <div class="member"><img class="member__img" src="https://source.unsplash.com/U5rMrSI7Pn4/400x400" alt="a doggo">
+      <div class="member__info"><strong class="member__name">Doggo</strong><em class="member__desig">Bone getter</em></div>
+    </div>
+    <div class="member"><img class="member__img" src="https://source.unsplash.com/cUFsB0dH9Xs/400x400" alt="a doggo">
+      <div class="member__info"><strong class="member__name">Doggo</strong><em class="member__desig">Bone getter</em></div>
+    </div>
+    <div class="member"><img class="member__img" src="https://source.unsplash.com/CiYGkddJEhA/400x400" alt="a doggo">
+      <div class="member__info"><strong class="member__name">Doggo</strong><em class="member__desig">Bone getter</em></div>
+    </div>
+    <div class="member"><img class="member__img" src="https://source.unsplash.com/jiqbWnkkgzI/400x400" alt="a doggo">
+      <div class="member__info"><strong class="member__name">Doggo</strong><em class="member__desig">Bone getter</em></div>
+    </div>
+    <div class="member join">
+      <p>We attac</p>
+      <p>We protec</p><small>but most importantly...</small><strong>We want our bone beck!</strong><a href="#">Join Us</a>
+    </div>
+  </div>
+</div>
+    <script src="//static.codepen.io/assets/common/stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js"></script>
+
+  
+  
+
+    <script>
+      // Make sure to resize the browser and see the changes
+      //# sourceURL=pen.js
+    </script>
+
+
+
+  
+  
+
+
+
+
+ </body></html>

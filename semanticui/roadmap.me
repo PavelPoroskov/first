@@ -1,0 +1,33 @@
+
+crapp1 (no theming)
+======
+yarn add semantic-ui-react
+yarn add semantic-ui-css
+
+index.js
+  import 'semantic-ui-css/semantic.min.css';
+
+
+crapp2 (theming)
+===================
+yarn add semantic-ui-react
+
+before: npm i -g gulp
+
+npm install semantic-ui --save  (yarn add semantic-ui --dev)
+cd semantic/
+gulp build
+
+
+todos (from redux/examples)
+=====
+
+semantic-ui-react-todos ()
+==========================
+cd src 
+ln -s ../semantic ./semantic
+
+npm i -S prop-types
+import React, {PropTypes} from 'react' => 
+  import React from 'react'
+  import PropTypes from 'prop-types'
