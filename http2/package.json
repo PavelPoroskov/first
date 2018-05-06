@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "mime-types": "^2.1.17"
+    "mime-types": "^2.1.18"
   }
 }
