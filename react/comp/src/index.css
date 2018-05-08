@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.Parent {
+  border: 1px solid black;
+}
+
+.Comp {
+  border: 1px solid blue;
+}
+
+@keyframes blincbg {
+  from {
+   background: red;
+  }
+  to {
+    background: inherit;
+  }
+}
+
+@keyframes blincbg2 {
+  from {
+   background: red;
+  }
+  to {
+    background: inherit;
+  }
+}
+
+.NewState {
+  animation-name: blincbg;
+  animation-duration: 1.5s;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  /*animation-iteration-count: 8;*/
+  animation-direction: normal;
+}
+
+.NewState2 {
+  animation-name: blincbg2;
+  animation-duration: 1.5s;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  /*animation-iteration-count: 8;*/
+  animation-direction: normal;
+}
