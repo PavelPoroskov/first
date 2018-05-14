@@ -1,4 +1,9 @@
 export const dataFetcher = url => {
+  // throw new Promise((resolve, reject) => {
+  //   // fake latency
+  //   setTimeout(() => resolve({title: 'title11', body: 'body11'}), 2000)
+  // })
+
   throw new Promise((resolve, reject) => {
     fetch(url).then(response => {
       if (response.ok) {
@@ -8,8 +13,10 @@ export const dataFetcher = url => {
         reject(new Error('error'))
       }
     })
-    .catch(error => {
-      reject(new Error(error.message))
-    })
+    // .catch(error => {
+    //   reject(new Error(error.message))
+    // })
   })
+
+//  throw fetch(url).then(response => response.json())
 }
