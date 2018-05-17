@@ -11,8 +11,8 @@ function * worker (action) {
 
     try {
       let users = yield call(api.findUsers)
-      console.log('saga users')
-      console.log(users)
+      // console.log('saga users')
+      // console.log(users)
       if (substring) {
         const lowstr = String(substring).toLowerCase()
         users = users.filter(user => 

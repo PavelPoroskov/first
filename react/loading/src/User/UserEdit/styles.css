@@ -1,0 +1,16 @@
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.from-btn {
+  flex: none;
+  width: fit-content;
+  margin-right: auto;
+}

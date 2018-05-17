@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
 //import logo from './logo.svg';
-import Users from './Users'
+//import Users from './Users'
+import User from './User'
 import './App.css';
 
 class App extends Component {
   render() {
     return (
-      <Users />
+      <div>
+        {/*
+        <Users />
+        */}
+        <User id={'1'}/>
+      </div>
     );
   }
 }
