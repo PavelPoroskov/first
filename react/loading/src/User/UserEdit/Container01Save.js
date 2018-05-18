@@ -17,11 +17,13 @@ const validateData = (obj) => {
 const mapDispatchToProps = (dispatch, ownProps) => ({
   saveData: (obj) => {
     const errs = validateData(obj)
-    if (0 < errs.length) {
-      return errs
-    }
+    // if (0 < errs.length) {
+    //   return errs
+    // }
 
     dispatch(actRequestSaveUser(obj))
+
+    return errs
   }
 })
 

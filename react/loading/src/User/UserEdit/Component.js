@@ -1,7 +1,12 @@
+//todo: backend2form, form2backend
+//todo: onLeave
+
+
 import React from 'react'
 import PropTypes from 'prop-types'
 
 //import UsersListView from '../UsersListView'
+import * as api from '../../api'
 
 import './styles.css'
 
@@ -16,10 +21,12 @@ class UserForm extends React.Component {
   constructor (props) {
     super(props)
 
-    //deep copy
-    const {ips, ...rest} = this.props.user
-    let ip0 = ips ? ips : []
-    this.formData = {...rest, ips: ip0.slice() }
+    // //deep copy
+    // const {ips, ...rest} = this.props.user
+    // let ip0 = ips ? ips : []
+    // this.formData = {...rest, ips: ip0.slice() }
+
+    this.formData = api.deepCopyObj(this.props.user)
 
     this.state = {
       validationErrors: [],
@@ -29,7 +36,7 @@ class UserForm extends React.Component {
 
   handleInput = (e) => {
     const {name, value} = e.target
-    this.hiddenState[name] = value
+    this.formData[name] = value
 
     this.setState( (prevState, props) => {
       if (prevState.validationErrors.length !== 0) {
@@ -41,7 +48,7 @@ class UserForm extends React.Component {
   saveData = () => {
     //validate
 
-    const validationErrors = this.props.saveData(this.hiddenState)
+    const validationErrors = this.props.saveData(this.formData)
     if (0 < validationErrors.length) {
       this.setState({
         validationErrors

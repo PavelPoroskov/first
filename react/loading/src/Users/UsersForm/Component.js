@@ -1,7 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import UsersListView from '../UsersListView'
+//import UsersListView from '../UsersListView'
+import UsersListView from '../UsersListViewSwap'
 
 import './styles.css'
 

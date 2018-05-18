@@ -1,0 +1,26 @@
+
+.SwapStateList {
+  position: relative;
+}
+
+.SwapState {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.visible {
+  opacity: 1;
+}
+
+.SwapState ul {
+  list-style-type: none;
+  margin-top: 1em;
+  padding-left: 40px;
+}
+
+.SwapState div {
+  margin-top: 1em;
+  padding-left: 40px;
+}

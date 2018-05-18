@@ -5,7 +5,8 @@ import {
 } from '../actions/ActionTypes'
 
 const initialState = {
-  data: [],
+//  data: [],
+  data: null,
   error: false,
   isLoading: false
 }
@@ -14,19 +15,19 @@ const list = (state = initialState, action) => {
   switch (action.type) {
     case USERS_LIST_REQUEST:
       return {
-        data: [],
+        ...initialState,
         isLoading: true,
         error: false
       }
     case USERS_LIST_SUCCESS:
       return {
+        ...state,
         data: action.users,
-        isLoading: false,
-        error: false
+        isLoading: false
       }
     case USERS_LIST_ERROR:
       return {
-        data: [],
+        ...state,
         isLoading: false,
         error: action.error
       } 
