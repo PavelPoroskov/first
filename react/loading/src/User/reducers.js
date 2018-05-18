@@ -8,7 +8,7 @@ import {
   USER_REQUEST,
   USER_SUCCESS,
   USER_ERROR
-} from '../actions/ActionTypes'
+} from './actions'
 
 const initialState = {
   data: null,

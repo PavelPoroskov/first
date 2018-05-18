@@ -2,7 +2,7 @@ import {
   USERS_LIST_REQUEST,
   USERS_LIST_SUCCESS,
   USERS_LIST_ERROR
-} from '../actions/ActionTypes'
+} from './actions'
 
 const initialState = {
 //  data: [],

@@ -1,6 +1,11 @@
 import { takeLatest, put, call } from 'redux-saga/effects'
+import {
+  USERS_LIST_REQUEST,
+  USERS_LIST_SUCCESS,
+  USERS_LIST_ERROR
+} from './actions'
 
-import * as api from '../../api'
+import * as api from '../api'
 
 
 function * worker (action) {
@@ -18,9 +23,9 @@ function * worker (action) {
         users = users.filter(user => 
           String(user.name).toLowerCase().indexOf(lowstr) !== -1)
       }
-      yield put({type: 'USERS_LIST_SUCCESS', users})
+      yield put({type: USERS_LIST_SUCCESS, users})
     } catch (error) {
-      yield put({type: 'USERS_LIST_ERROR', error})
+      yield put({type: USERS_LIST_ERROR, error})
     // } finally {
     }
   // }
@@ -28,7 +33,7 @@ function * worker (action) {
 
 
 function * watcher () {
-  yield takeLatest('USERS_LIST_REQUEST', worker)
+  yield takeLatest(USERS_LIST_REQUEST, worker)
 }
 
 export default watcher

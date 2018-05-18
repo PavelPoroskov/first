@@ -8,8 +8,8 @@ function * worker (action) {
   //   const {substring} = yield take('USERS_LIST_REQUEST')
 
     const {id} = action
-    console.log('saga user')
-    console.log(id)
+    //console.log('saga user')
+    //console.log(id)
 
     try {
       let userSaved
@@ -18,7 +18,7 @@ function * worker (action) {
       } else {
         userSaved = yield call(api.findUserById, id)
       }
-      console.log('saga user')
+      console.log('saga user request')
       console.log(userSaved)
       yield put({type: 'USER_SUCCESS', user: userSaved})
 
@@ -47,7 +47,7 @@ function * worker (action) {
             result = yield call(api.addUser, userToSave)
           }
           console.log('saga user save')
-          console.log(result)
+          //console.log(result)
           yield put({type: 'USER_SAVE_SUCCESS', user: result})
           //userSaved = { ...userSaved, ...result }
 
