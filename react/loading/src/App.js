@@ -1,19 +1,29 @@
 import React, { Component } from 'react';
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect
+} from 'react-router-dom'
+
 //import logo from './logo.svg';
-//import Users from './Users'
+import Users from './Users'
 import User from './User'
+
 import './App.css';
 
 class App extends Component {
   render() {
     return (
-      <div>
-        {/*
-        <Users />
-        */}
-        <User id={'1'}/>
-      </div>
-    );
+      <Router>
+        <Switch>
+          <Route path='/users/:userid' component={User} />
+          <Route path='/users' component={Users} />
+          <Redirect to='/users' />
+        </Switch>
+      </Router>
+    )
   }
 }
 

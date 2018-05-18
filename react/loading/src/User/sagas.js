@@ -1,6 +1,6 @@
-import { takeLatest, take, put, call } from 'redux-saga/effects'
+import { takeLatest, select, take, put, call } from 'redux-saga/effects'
 
-import * as api from '../../api'
+import * as api from '../api'
 
 
 function * worker (action) {
@@ -8,6 +8,8 @@ function * worker (action) {
   //   const {substring} = yield take('USERS_LIST_REQUEST')
 
     const {id} = action
+    console.log('saga user')
+    console.log(id)
 
     try {
       let userSaved
@@ -18,7 +20,7 @@ function * worker (action) {
       }
       console.log('saga user')
       console.log(userSaved)
-      yield put({type: 'USER_SUCCESS', userSaved})
+      yield put({type: 'USER_SUCCESS', user: userSaved})
 
 
       while (true) {
@@ -26,7 +28,7 @@ function * worker (action) {
 
         try {
           let result = {}
-          if (userSave.id) {
+          if (userToSave.id) {
             const {id, ...restUserToSave} = userToSave
 
             const userSaved = yield select(state => state.user.data)
@@ -47,6 +49,8 @@ function * worker (action) {
           console.log('saga user save')
           console.log(result)
           yield put({type: 'USER_SAVE_SUCCESS', user: result})
+          //userSaved = { ...userSaved, ...result }
+
         } catch (error) {
           yield put({type: 'USER_SAVE_ERROR', error})
         // } finally {

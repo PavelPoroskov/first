@@ -10,12 +10,12 @@ import Container02LoadResult from './Container02LoadResult'
 class UserRequest extends React.Component {
   static propTypes = {
     requestData: PropTypes.func.isRequired,
-    id: PropTypes.string
+    //id: PropTypes.string
   }
 
   constructor (props) {
     super(props)
-    this.props.requestData(this.props.id)
+    this.props.requestData(this.props.match.params.userid)
   }
 
   render () {

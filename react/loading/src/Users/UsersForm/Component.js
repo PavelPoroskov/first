@@ -1,8 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import {Link} from 'react-router-dom'
 
-//import UsersListView from '../UsersListView'
-import UsersListView from '../UsersListViewSwap'
+import UsersListView from '../UsersListView'
+//import UsersListView from '../UsersListViewSwap'
 
 import './styles.css'
 
@@ -29,6 +30,7 @@ class UsersForm extends React.Component {
 
   render () {
     console.log('render UsersForm')
+    const { match: {url}} = this.props
 
     return (
       <div className='content'>
@@ -36,12 +38,16 @@ class UsersForm extends React.Component {
           Users
         </div>
 
-        <div className='content-header'>
-          Filter
-          <input type='text' onChange={this.onChangeFilter} />
+        <div className='controls'>
+          <label>
+            Filter
+            <input type='text' onChange={this.onChangeFilter} />
+          </label>
+
+          <Link to={`${url}/new`}>New user</Link>
         </div>
 
-        <UsersListView/>
+        <UsersListView baseurl={url}/>
       </div>
     )
   }

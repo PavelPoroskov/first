@@ -8,12 +8,12 @@ class UserListResults extends React.Component {
   static propTypes = {
     isLoading: PropTypes.bool.isRequired,
     //error: PropTypes.string,
-    users: PropTypes.array.isRequired
+    users: PropTypes.array
   }
   render() {
     console.log('render UserListResults')
 
-    const { error, users, isLoading } = this.props
+    const { error, users, isLoading, ...restProps } = this.props
 
     if (error) {
       return <span>Something is not right!</span>;
@@ -27,7 +27,7 @@ class UserListResults extends React.Component {
       return <span>No Results Found</span>;
     }
 
-    return <UserListView users={users}/>
+    return <UserListView users={users} {...restProps} />
   }
 }
 
