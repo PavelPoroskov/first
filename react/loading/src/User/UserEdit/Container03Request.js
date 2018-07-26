@@ -4,7 +4,8 @@ import {connect} from 'react-redux'
 
 import {actRequestUser} from '../actions'
 
-import Container02LoadResult from './Container02LoadResult'
+//import Container02LoadResult from './Container02LoadResult'
+import Container02LoadResult from './Container022LoadResult'
 //import './styles.css'
 
 class UserRequest extends React.Component {

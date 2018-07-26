@@ -14,12 +14,14 @@ const initialState = {
 const list = (state = initialState, action) => {
   switch (action.type) {
     case USERS_LIST_REQUEST:
+      console.log('reducer Users REQUEST')
       return {
         ...initialState,
         isLoading: true,
         error: false
       }
     case USERS_LIST_SUCCESS:
+      console.log('reducer Users SUCCESS')
       return {
         ...state,
         data: action.users,

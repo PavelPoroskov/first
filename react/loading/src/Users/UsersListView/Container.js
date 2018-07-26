@@ -11,9 +11,9 @@ class UserListResults extends React.Component {
     users: PropTypes.array
   }
   render() {
-    console.log('render UserListResults')
-
     const { error, users, isLoading, ...restProps } = this.props
+    console.log('render UserListResults')
+    console.log(this.props)
 
     if (error) {
       return <span>Something is not right!</span>;

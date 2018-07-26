@@ -4,7 +4,13 @@
 // export default Container02LoadResult
 
 //import Container03Request from './Container03Request'
-import Container from './Container04RequestLoad'
+import UserEdit from './Container03Request'
+import UserNew from './Container02New'
 
-export default Container
+//export default UserEdit
+
+export {
+  UserEdit,
+  UserNew
+}
 

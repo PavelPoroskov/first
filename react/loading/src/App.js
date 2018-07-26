@@ -1,28 +1,30 @@
-import React, { Component } from 'react';
+import React from 'react';
+
+import { Provider } from 'react-redux'
+import createStore from './store'
 
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect
+  BrowserRouter as Router//,
+  //Switch,
+  //Redirect
 } from 'react-router-dom'
+import routes from './routes'
 
-//import logo from './logo.svg';
-import Users from './Users'
-import User from './User'
+//console.log(routes)
 
-class App extends Component {
-  render() {
-    return (
+const routesApp = (Router, routes) => {
+  const store = createStore()
+  return (
+    <Provider store={store}>
       <Router>
-        <Switch>
-          <Route path='/users/:userid' component={User} />
-          <Route path='/users' component={Users} />
-          <Redirect to='/users' />
-        </Switch>
+        <div>
+          {routes}
+        </div>
       </Router>
-    )
-  }
+    </Provider>
+  )
 }
+
+const App = () => routesApp(Router, routes)
 
 export default App;

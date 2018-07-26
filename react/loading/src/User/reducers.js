@@ -27,11 +27,13 @@ const list = (state = initialState, action) => {
         data: {}
       }
     case USER_REQUEST:
+      console.log('reducer UseR REQUEST')
       return {
         ...initialState,
         isLoading: true
       }
     case USER_SUCCESS:
+      console.log('reducer UseR SUCCESS')
       return {
         ...state,
         data: action.user,
