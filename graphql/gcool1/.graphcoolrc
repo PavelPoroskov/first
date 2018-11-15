@@ -1,0 +1,3 @@
+targets:
+  dev: local/cjogaghia00040137natplgsf
+  default: dev
