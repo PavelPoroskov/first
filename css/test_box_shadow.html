@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <title>DDash</title>
+  <style>
+    .boxcont {
+      width: 100%;
+      //height: 100vh;
+
+      display: flex;
+      align-items: center;
+      justify-content: center
+    }
+    .box{ 
+      width: 100px;
+      height: 100px;
+/*
+      box-shadow:
+        0 0 20px black,
+        20px 15px 30px yellow,
+        -20px 15px 30px lime,
+        -20px -15px 30px blue,
+        20px -15px 30px red;
+*/        
+      box-shadow:
+        0 0 20px black,
+        20px 15px 30px yellow,
+        -20px -15px 30px blue;
+    }
+
+    * {
+  padding: 0;
+  margin : 0;
+  box-sizing: border-box;
+}
+table, .table {
+  padding:0;
+  margin:1em;
+  display: table;
+  border-spacing:2px 8px;
+  padding:0;
+  position:relative;
+}
+td, .td {
+  display:table-cell;
+  
+
+}
+span{
+    display: block;
+    padding:15px;
+    height: 50px;
+    line-height: 20px;
+  }
+tr, .tr {
+  display:table-row;
+}
+
+td:first-child:before,
+.td:first-child:before{
+  box-sizing: border-box;
+  content:'';
+  position:absolute;
+  /* do not use top and bottom */
+  left:0;
+  right:2px;
+
+  display: block;
+  height: 50px;
+  box-shadow: 0 1px 9px 1px rgba(0, 0, 0, 0.28);
+  -webkit-box-shadow: 0 1px 9px 1px rgba(0, 0, 0, 0.28);
+}
+
+  </style>
+  </head>
+  <body>
+    <div class='boxcont'>
+      <div class='box'>
+      </div>
+      
+    </div>
+
+
+<table>
+  <tr>
+    <td><span>Celll 1111</span></td>
+    <td><span>Celll 222</span></td>
+  </tr>
+  <tr>
+    <td><span>Cellll 33</span></td>
+    <td><span>Cell 4</span></td>
+  </tr>
+</table>
+
+  </body>
+</html>

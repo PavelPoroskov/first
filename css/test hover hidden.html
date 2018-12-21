@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <title>DDash</title>
+  <style>
+    .border, .border2 {
+      border: solid 1px black;
+      display: flex;
+    }
+    .marker {
+      background-color: red;
+      width: 100px;
+      height: 100px;
+    }
+    .divVisible {
+      visibility: visible;
+      width: 100px;
+      height: 100px;
+    }
+    .divHidden {
+      visibility: hidden;
+      width: 100px;
+      height: 100px;
+    }
+    .divVisible:hover + .marker, .divHidden:hover + .marker{
+      background-color: green;
+    }
+
+    .border2:hover > .marker {
+      background-color: green;
+    }
+  </style>
+  </head>
+  <body>
+    <div class='border'>
+      <div class='divVisible'>
+      </div>
+      <div class="marker"> Marker</div>
+    </div>
+    <div class='border'>
+      <div class='divHidden'>
+      </div>
+      <div class="marker"> Marker</div>
+    </div>
+    <p></p>
+    <div class='border2'>
+      <div class='divVisible'>
+      </div>
+      <div class="marker"> Marker</div>
+    </div>
+    <div class='border2'>
+      <div class='divHidden'>
+      </div>
+      <div class="marker"> Marker</div>
+    </div>
+  </body>
+</html>
