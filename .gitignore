@@ -3,6 +3,7 @@
 **/*.db
 *.txt
 **/build*
+**/build
 **/dist
 */.gradle
 */.idea
