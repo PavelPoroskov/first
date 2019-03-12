@@ -14,6 +14,21 @@ services:
     networks:
       - internal
 
+  ws: 
+    container_name: test_ws
+    build: 
+      context: ./ws
+    tty: true
+    restart: always
+    volumes: 
+      - "./ws:/app"    
+    links:      
+      - "redis"     
+    networks:      
+      - internal
+    env_file:
+      - .env
+      
   db:
     restart: always
     container_name: test_db
@@ -56,6 +71,18 @@ services:
     ports:
       - "8000:8000"
       
+  front:
+    build: ./front
+    tty: true
+    user: "${UID}:${GID}"
+    container_name: test_front
+    volumes:
+      - "./front:/app"
+    networks:
+    - internal    
+    env_file:
+      - .env
+
   nginx:
     container_name: test_nginx
     image: "nginx:stable"      
