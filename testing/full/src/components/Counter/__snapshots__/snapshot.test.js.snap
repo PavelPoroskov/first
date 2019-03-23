@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`shanshot Counter 1`] = `
+<p
+  data-testid="counter"
+>
+  0
+</p>
+`;
