@@ -5,17 +5,17 @@ export const doIncrement = (counter) => counter + 1
 
 export const doDecrement = (counter) => counter - 1
 
-const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
+// const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
 
-function getRandomIntInclusive(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive 
-}
+// function getRandomIntInclusive(min, max) {
+//   min = Math.ceil(min);
+//   max = Math.floor(max);
+//   return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive 
+// }
 
-const localfetch = (arData) => {
-  return wait(getRandomIntInclusive(100, 2000)).then(() => arData)
-}
+// const localfetch = (arData) => {
+//   return wait(getRandomIntInclusive(100, 2000)).then(() => arData)
+// }
 
 export default
 function CounterControl(props) {
@@ -30,7 +30,13 @@ function CounterControl(props) {
 
   const asyncFetch = async () => {
     try{
-      let items = await localfetch([ 'item1', 'item 2', 'item 3', 'item 4' ])
+      // let items = await localfetch([ 'item1', 'item 2', 'item 3', 'item 4' ])
+      let file = await fetch('/items.json')
+      // console.log('file')
+      // console.log(file)
+      let items = await file.json()
+      // console.log('items')
+      // console.log(items)
       setList(items)
     }catch (e){
 
