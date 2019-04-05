@@ -49,16 +49,18 @@ it('fetch on DidMount: react-dom/test-utils, mock', async () => {
   });
   jest.spyOn(global, 'fetch').mockImplementation(() => mockFetchPromise);
 
+  //wait for update
+  //https://github.com/facebook/react/pull/14853
   act(() => {
     ReactDOM.render(<CounterControl />, container);
     // (async function() {
     //   let aaw = await wait(2500)
     // })()
   });
-  const button = container.querySelector('button');
-  act(() => {
-    button.dispatchEvent(new MouseEvent('click', {bubbles: true}));
-  });
+  // const button = container.querySelector('button');
+  // act(() => {
+  //   button.dispatchEvent(new MouseEvent('click', {bubbles: true}));
+  // });
   await wait(500)
 
   expect(global.fetch).toHaveBeenCalledTimes(1);
