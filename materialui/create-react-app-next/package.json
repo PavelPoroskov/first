@@ -1,0 +1,28 @@
+{
+  "name": "create-react-app-next",
+  "version": "4.0.0",
+  "private": true,
+  "scripts": {
+    "start": "SKIP_PREFLIGHT_CHECK=true react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "@material-ui/core": "next",
+    "@material-ui/icons": "next",
+    "@material-ui/styles": "^4.0.0-alpha.7",
+    "clsx": "latest",
+    "markdown-to-jsx": "^6.9.3",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-scripts": "latest",
+    "recharts": "^1.5.0"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
