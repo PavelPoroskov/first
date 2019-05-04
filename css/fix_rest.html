@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="theme-color" content="#000000" />
+    <title>Fix and Rest</title>
+<style>
+.container {
+  display: flex;
+  flex-direction: column;
+
+  /*
+  height: 100%;
+  min-height: 100%;
+  */
+  height: 100vh;
+}
+.container__fix {
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: blue;
+}
+.divtable__rest {
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: pink;
+}
+</style>    
+  </head>
+  <body>
+    <div class='container'>
+      <div class='container__fix'>
+        Fixed
+      </div>
+      <div class='divtable__rest'>
+        Rest
+      </div>
+    </div>
+  </body>
+</html>

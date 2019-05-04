@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="theme-color" content="#000000" />
+    <title>Table Div-Flex</title>
+<style>
+.divtable {
+  display: flex;
+  flex-direction: column;
+}
+.divtable__row {
+  display: flex;
+  flex-direction: row;
+  border-bottom: solid black 1px;
+}
+.divtable__row__cell {
+  flex: 1;
+}
+</style>    
+  </head>
+  <body>
+    <div class='divtable'>
+      <div class='divtable__row'>
+        <div class='divtable__row__cell'>Long Text 11</div>
+        <div class='divtable__row__cell'>Long Text Long Text 12</div>
+        <div class='divtable__row__cell'>Long Text Long Text  Long Text 13</div>
+        <div class='divtable__row__cell'>Long Text 14</div>
+      </div>
+      <div class='divtable__row'>
+        <div class='divtable__row__cell'>21</div>
+        <div class='divtable__row__cell'>22</div>
+        <div class='divtable__row__cell'>23</div>
+        <div class='divtable__row__cell'>24</div>
+      </div>
+      <div class='divtable__row'>
+        <div class='divtable__row__cell'>31</div>
+        <div class='divtable__row__cell'>32</div>
+        <div class='divtable__row__cell'>33</div>
+        <div class='divtable__row__cell'>34</div>
+      </div>
+    </div>
+  </body>
+</html>
