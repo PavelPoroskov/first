@@ -2,6 +2,7 @@
 **/.cache
 **/.env
 **/node_modules
+**/.next
 **/semantic
 **/*.db
 *.txt
