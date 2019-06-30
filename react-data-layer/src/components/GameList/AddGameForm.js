@@ -1,9 +1,5 @@
 import React, { useState } from "react";
-import {
-  Button,
-  TextInput,
-  Row , Col
-} from "react-materialize";
+import { Button, TextInput, Row, Col } from "react-materialize";
 
 import "./styles.css";
 
@@ -20,24 +16,25 @@ const AddGameForm = ({ onAddGame }) => {
     setNewGameTitle("");
   };
 
-//   <div style={{ marginLeft: "0.75rem", marginRight: "0.75rem", display: 'inline-flex' }}>
-//      <Button className="col s12 m2 l1 input-field">Add</Button>
-//           </div>
+  //   <div style={{ marginLeft: "0.75rem", marginRight: "0.75rem", display: 'inline-flex' }}>
+  //      <Button className="col s12 m2 l1 input-field">Add</Button>
+  //           </div>
+
+  //   <Row>
+  //   <form action="#">
+  //     <div class="file-field input-field">
+  //       <div class="btn">
+  //         <span>File</span>
+  //         <input type="file" />
+  //       </div>
+  //       <div class="file-path-wrapper">
+  //         <input class="file-path validate" type="text" />
+  //       </div>
+  //     </div>
+  //   </form>
+  // </Row>
   return (
     <React.Fragment>
-    <Row>
-        <form action="#">
-        <div class="file-field input-field">
-        <div class="btn">
-            <span>File</span>
-            <input type="file" />
-        </div>
-        <div class="file-path-wrapper">
-            <input class="file-path validate" type="text" />
-        </div>
-        </div>
-    </form>
-    </Row>
       <form onSubmit={handleAddGame}>
         <Row>
           <TextInput
@@ -46,11 +43,20 @@ const AddGameForm = ({ onAddGame }) => {
             onChange={handleChangeText}
             s={12}
             m={10}
-            l={10}
+            l={11}
           />
-          <Col s={12} m={2} l={2} className="input-field">
-            <Button >Add</Button>
-            </Col>
+
+          <Col
+            m={2}
+            l={1}
+            className="hide-on-small-only"
+            style={{ marginTop: "1rem" }}
+          >
+            <Button style={{ width: "100%" }}>Add</Button>
+          </Col>
+          <Col s={12} className="hide-on-med-and-up">
+            <Button style={{ width: "100%" }}>Add</Button>
+          </Col>
         </Row>
       </form>
     </React.Fragment>

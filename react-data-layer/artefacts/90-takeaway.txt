@@ -1,0 +1,17 @@
+
+
+my way: ViewComponent <== ViewComponentConnected
+    components/GameList -- only view component, not connected to store
+    screen/GameListConnected -- connected to store, use components/GameList
+
+
+index.js =use=> App.js =use=> ScreenApp =use=> components
+
+index.js -- root App into document
+App.js -- connect store
+ScreenApp -- connected to store components/contatiners
+components -- view components
+
+ScreenApp use view components with react-materialize
+    can change to use view components with bulma
+
