@@ -21,7 +21,7 @@ Don't add the same game second time.
   .if success (uniq title) then resetForm
   .else dont reset: user can edit title
 
-  return focus in the field title
+  .return focus in the field title
 
 versions changes:
 =================
