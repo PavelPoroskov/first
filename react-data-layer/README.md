@@ -16,12 +16,12 @@ view component and redux container in one folder
 .Don't add game without title
 add formik, yup 
 
-issue
 Don't add the same game second time.
-  submit form
-  if success (uniq title) then resetForm
-  else dont reset: user can edit title
-    ? side effect ? redux-thunks
+    submit form
+  .if success (uniq title) then resetForm
+  .else dont reset: user can edit title
+
+  return focus in the field title
 
 versions changes:
 =================

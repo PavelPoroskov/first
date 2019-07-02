@@ -12,7 +12,9 @@ const initialData = [
 export function games(state = initialData, action) {
   switch (action.type) {
     case ADD_GAME:
-      return [action.title, ...state];
+      // return [action.title, ...state];
+      const newArray = state.concat([action.title]);
+      return newArray.sort()
     default:
       return state;
   }

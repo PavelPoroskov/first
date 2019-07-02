@@ -27,16 +27,17 @@ const AddGameView = ({
         // type='text'
         name="title"
         autoComplete="off"
+        spellCheck="false"
         s={12}
         m={10}
-        l={11}
+        l={10}
       >
         {errors.title && touched.title && <div id="feedback" style={styles.msgerror}>{errors.title}</div>}
       </TextInput>
 
       <Col
         m={2}
-        l={1}
+        l={2}
         className="hide-on-small-only"
         style={{ marginTop: "1rem" }}
       >
@@ -57,17 +58,18 @@ export default withFormik({
     }
   },  
   handleSubmit: (values,formikBag) => {
-    // console.log(values)
-    // console.log(formikBag)
-    formikBag.props.onAddGame(values.title)
-    formikBag.resetForm({title: ''})
+    // formikBag.props.onAddGame(values.title)
+    // formikBag.resetForm({title: ''})
 
-    // formikBag.props.addGame(values.title)
-    // if success
-    //    formikBag.resetForm()
+    const res = formikBag.props.onAddGame(values.title)
+    if (res.success) {
+      formikBag.resetForm({title: ''})
+    }else{
+      formikBag.setFieldError ( 'title', res.msg )
+    }
   },
   validationSchema: yup_object().shape({
-    title: yup_string().required("Title is required.")
+    title: yup_string().trim().required("Title is required.")
   }),
   validateOnBlur: false,
   displayName: 'AddGameForm',
