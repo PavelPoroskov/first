@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <title>hover & scroll</title>
+  <style>
+    .container {
+      width: 200px;
+      height: 150px;
+      overflow-y: scroll;
+      overflow-x: visible;
+      background-color: white;
+    }
+    .hover-menu {
+      display: none;
+      /* margin-top: -5px; */
+      left: 220px;
+    }
+    .hover-area {
+      background: #f0f0f0;
+      height: 25px;
+      padding: 20px;
+      border: 1px dashed black;
+      margin-bottom: 10px;
+    }
+    .hover-area:hover {
+      background-color: gray;
+    }
+    .hover-area:hover .hover-menu {
+      display: block;
+      width: 500px;
+      padding: 10px;
+      border: 2px solid black;
+      position: absolute;
+      z-index: 1000;
+      text-align: right;
+    }
+  </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="hover-area">
+        <div class="hover-menu">
+          .hover-menu here <a href="#">button</a>
+        </div>
+        .hover-area  here <a href="#">item</a>
+      </div>
+    </div>
+  </body>
+</html>
