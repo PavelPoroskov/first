@@ -104,8 +104,8 @@ const allTests = async () => {
   // await testReturnFirstSuccess( arrThirdSuccess, 'arrThirdSuccess'); // must be third
   // await testReturnFirstSuccess( arrLastSuccess, 'arrLastSuccess'); // must be last
 
-  await testTryNTimes( () => Promise.reject(-1), 3);
-  await testTryNTimes( () => 1, 3);
+  await testTryNTimes(() => Promise.reject(-1), 3);
+  await testTryNTimes(() => 1, 3);
 }
 
 allTests();
