@@ -14,9 +14,11 @@ var lambdaCallbackResult = dockerLambda({
   // Error: 
   // {"errorType":"object","errorMessage":"[object Object]"}
 
-  handler: 'index.handler_throw_validation',
+  // handler: 'index.handler_throw_validation',
   // Error: 
   // {"errorType":"ValidationError","errorMessage":"\"companyId\" must be a number"}
+  
+  handler: 'index.handler_throw',
 })
 
 console.log('invoke result');

@@ -1,29 +1,15 @@
 // docker run --rm -v "$PWD":/var/task:ro,delegated lambci/lambda:nodejs12.x index.handler
+const CustomError = require('customError');
 
 const Joi = require('@hapi/joi');
 
 const schema = Joi.object().keys({
+  pages: Joi.array().items(Joi.string()).required(),  
   bucket: Joi.string().required(),
   companyId: Joi.number().min(1).required(),
   id: Joi.number().min(1).required(),
 });
 
-class CustomError extends Error {
-  constructor(...params) {
-    // Pass remaining arguments (including vendor specific ones) to parent constructor
-    super(...params)
-
-    // Maintains proper stack trace for where our error was thrown (only available on V8)
-    if (Error.captureStackTrace) {
-      Error.captureStackTrace(this, CustomError)
-    }
-
-    this.name = 'CustomError'
-    // Custom debugging information
-    // this.foo = foo
-    // this.date = new Date()
-  }
-}
 
 exports.handler =  async function(event, context) {
   const sum = 1 + 3;
@@ -39,15 +25,13 @@ exports.handler_noreturn =  async function(event, context) {
 }
 // null
 
-exports.handler_throwobj =  async function(event, context) {
-  throw {
-    type: 'some-error',
-    message: 'Run',
-  };
-}
-// {"errorType":"object","errorMessage":"[object Object]"}
-
 exports.handler_throw =  async function(event, context) {
+//   throw {
+//     type: 'some-error',
+//     message: 'Run',
+//   };
+// // {"errorType":"object","errorMessage":"[object Object]"}
+
   // throw {
   //   errorType: 'throw_typed',
   //   errorMessage: 'throw_typed: errorMessage',
@@ -67,7 +51,20 @@ exports.handler_throw =  async function(event, context) {
   // throw new UserException('from user exception');
   // // {"errorType":"object","errorMessage":"[object Object]"}
 
-  throw new CustomError('from custom err');
+  function UserException(message) {
+    this.message = message;
+    this.name = 'UserException';
+    // !!! need this method
+    this.toString = () => `name ${this.name}, message ${this.message}`;
+  }
+  throw new UserException('from user exception');
+  // {"errorType":"object","errorMessage":"name UserException, message from user exception"}
+
+  //   throw new Error('some-error');
+// // {"errorType":"Error","errorMessage":"some-error"}
+
+  // throw new CustomError('from custom err');
+  // // {"errorType":"CustomError","errorMessage":"from custom err"}
 }
 
 exports.handler_stringify =  async function(event, context) {
@@ -77,11 +74,6 @@ exports.handler_stringify =  async function(event, context) {
   });
 }
 // {"errorType":"string","errorMessage":"{\"type\":\"some-error\",\"message\":\"Run\"}"}
-
-exports.handler_throwerr =  async function(event, context) {
-  throw new Error('some-error');
-}
-// {"errorType":"Error","errorMessage":"some-error"}
 
 exports.handler_ref = async function() {
   return x + 10
@@ -109,6 +101,7 @@ exports.handler_throw_validation = async function(event) {
   const validationResult = schema.validate({
     bucket: 'aaa',
     companyId: 'bbb',
+    pages: ['a','b', 11, 'd'],
   });
 
   if (validationResult.error) {

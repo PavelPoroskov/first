@@ -1,0 +1,30 @@
+class CustomError extends Error {
+  constructor(...params) {
+    // Pass remaining arguments (including vendor specific ones) to parent constructor
+    super(...params)
+
+    // Maintains proper stack trace for where our error was thrown (only available on V8)
+    if (Error.captureStackTrace) {
+      Error.captureStackTrace(this, CustomError)
+    }
+
+    this.name = 'CustomError'
+    // Custom debugging information
+    // this.foo = foo
+    // this.date = new Date()
+  }
+}
+
+// const ins = new CustomError('instance');
+// console.log('custom error');
+// console.log(typeof ins);
+// console.log(ins instanceof CustomError); // true
+// console.log(ins instanceof Error); // true
+// // console.dir(ins);
+// console.log('== custom error fields');
+// console.log(ins.name);
+// console.log(ins.message);
+// console.log('== custom error constructor');
+// console.log(ins.constructor.name);
+
+exports.CustomError = CustomError;
