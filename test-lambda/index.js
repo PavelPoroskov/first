@@ -51,20 +51,19 @@ exports.handler_throw =  async function(event, context) {
   // throw new UserException('from user exception');
   // // {"errorType":"object","errorMessage":"[object Object]"}
 
-  function UserException(message) {
-    this.message = message;
-    this.name = 'UserException';
-    // !!! need this method
-    this.toString = () => `name ${this.name}, message ${this.message}`;
-  }
-  throw new UserException('from user exception');
+  // function UserException(message) {
+  //   this.message = message;
+  //   this.name = 'UserException';
+  //   // !!! need this method
+  //   this.toString = () => `name ${this.name}, message ${this.message}`;
+  // }
+  // throw new UserException('from user exception');
   // {"errorType":"object","errorMessage":"name UserException, message from user exception"}
+  // and stack about not this file
 
-  //   throw new Error('some-error');
-// // {"errorType":"Error","errorMessage":"some-error"}
-
-  // throw new CustomError('from custom err');
-  // // {"errorType":"CustomError","errorMessage":"from custom err"}
+  throw new CustomError('from custom err');
+  // {"errorType":"CustomError","errorMessage":"from custom err"}
+  // and stack about this file
 }
 
 exports.handler_stringify =  async function(event, context) {
