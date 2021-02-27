@@ -13,3 +13,12 @@ console.log(id);
 
 console.log('=== hash');
 console.log(hash(id));
+
+
+const hashSha1 = text => crypto
+  .createHash('sha1')
+  .update(`${text}_${new Date().getTime()}`)
+  .digest('hex');
+
+console.log('=== hashSha1');
+console.log(hashSha1(id));
