@@ -16,7 +16,9 @@ const worker = async ({ name, ms, error }) => {
 const test = async () => {
   const queue = asyncApi.queue( worker, 1);
   queue.error(function(err, task) {
-    console.error('task experienced an error', err);
+    // console.error('task experienced an error', err);
+    queue.kill();
+    throw err;
   });
   queue.drain(function() {
     console.log('all items have been processed');
@@ -27,8 +29,8 @@ const test = async () => {
 
   await wait(4000);
 
-  queue.push({ name: 'task 3', ms: 600 });
-  // queue.push({ name: 'task 3', ms: 600, error: 'Dread' });
+  // queue.push({ name: 'task 3', ms: 600 });
+  queue.push({ name: 'task 3', ms: 600, error: 'Dread' });
   queue.push({ name: 'task 4', ms: 300 });
 };
 
